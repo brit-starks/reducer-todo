@@ -1,6 +1,6 @@
 import React, { useState, useReducer} from 'react';
 import tasks from './data';
-import { reducer, initialState } from './reducers/Reducer';
+import { reducer, initialState } from './reducers/reducer';
 
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';

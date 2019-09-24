@@ -1,29 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer } from 'react';
+import { initialState, reducer } from '../reducers/reducer';
+
 
 const TodoForm = () => {
 
   const [task, setTask] = useState('');
 
-  // handleSubmit = e => {
-  //   this.props.addTask(e, this.state.task);
-  //   this.setState({ task: ""});
-  // };
+const handleChange = e => {
+  setTask(e.target.value);
+}
 
-  // handleChange = e => {
-  //   this.setState({
-  //     task: e.target.value
-  //   })
-  // }
+  const [state, dispatch] = useReducer(initialState, reducer);
+  console.log(state);
 
   return(
-    <form onSubmit={this.handleSubmit}>
+    <form>
       <input 
         type='text'
         name='task'
-        value={this.state.task}
-        onChange={this.state.handleChange}
+        value={task}
+        onChange={handleChange}
       />
-      <button> Add Todo</button>
+      <button onClick={() => dispatch({type: "ADD_TODO", payload: task})}> Add Todo</button>
     </form>
   )
 }

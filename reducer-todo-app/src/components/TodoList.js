@@ -7,10 +7,8 @@ const TodoList = ({ todo }) => {
     <div>
       <h2>Todo List</h2>
       {todo.map(data => (
-         <p>{data.task}</p> 
+        <p>{data.task}</p> 
       ))}
-
-      <p>{todo.task}</p>
     </div>
   )
 }
