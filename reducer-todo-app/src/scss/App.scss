@@ -1,14 +1,24 @@
 html {
-  background-color: #282c34;
+  background-color: midnightblue;
 }
 .App {
   text-align: center;
+  width: 60%;
+  margin: 3rem auto;
+  background-color: lightgray;
   color: white;
 }
 
-.App-logo {
-  height: 40vmin;
+h1 {
+  color: white;
+  text-decoration: underline;
+  font-size: 3rem;
+  font-family: 'Indie Flower', cursive;
 }
+
+// .App-logo {
+//   height: 40vmin;
+// }
 
 .App-header {
   background-color: #282c34;

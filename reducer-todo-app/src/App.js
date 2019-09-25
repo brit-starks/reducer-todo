@@ -4,25 +4,25 @@ import { reducer, initialState } from './reducers/reducer';
 
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
-// import Todo from './components/Todo';
 
 import '../src/scss/App.scss';
 
 function App() {
 
-  const [todo, setTodo] = useState(tasks);
+  const [todo] = useState(tasks);
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const addTodo = (e, todo) => {
     e.preventDefault();
+    console.log(e, todo)
     dispatch({type:'ADD_TODO', payload: todo})
   }
 
   return (
     <div className="App">
       <h1>Todo Reducer</h1>
-      <TodoList todo={todo}/>
       <TodoForm addTodo={addTodo}/>
+      <TodoList state={state.todos}/>
     </div>
   );
 }

@@ -1,8 +1,7 @@
-// import React from 'react';
 
 export const initialState = {
   todos : [{
-  todo: 'add todo',
+  todo: '',
   id: 1234,
   complete: false
   }]
@@ -17,7 +16,8 @@ export const reducer = (state, action) => {
         complete: false
       };
       return {
-        ...state, todos: [state.todos, newTodo]
+        ...state, 
+        todos: [...state.todos, newTodo]
       }
     }
     default:

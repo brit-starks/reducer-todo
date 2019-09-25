@@ -1,13 +1,14 @@
 import React from 'react';
-import Todo from './Todo';
+import '../scss/todo-list.scss';
 
-const TodoList = ({ todo }) => {
-  console.log(todo);
+const TodoList = ({ state }) => {
+  // console.log();
   return(
-    <div>
-      <h2>Todo List</h2>
-      {todo.map(data => (
-        <p>{data.task}</p> 
+    <div className='todo-list'> 
+      <h2 className='todo-list-title'>Todo List</h2>
+      {state.map(data => (
+        // console.log(data)
+        <p>{data.todo}</p> 
       ))}
     </div>
   )
